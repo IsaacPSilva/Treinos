@@ -3,20 +3,29 @@ import random
 print('-'*50)
 print('{:^50}'.format("GAME OF GUESS"))
 print('-'*50)
-'''print('\nAttecion - Select 99 for exit game\n')'''
+print('Select 99 for exit game\n')
 
 #pontuação
 pont_you = 0
 pont_pc = 0
 
-while True:
+game = True
+
+while game==True:
     number = random.randint(0,10)
 
     while True:
 
         you = int(input('Enter a number [0, 10]:  '))
+        if you==99:
+            game=False
+            break
+
         while you<0 or you>10:
             you = int(input('Invalid value. Enter a number [0, 10]:  '))
+            if you == 99:
+                game=False
+                break
 
         pc = random.randint(0,10)
         print(f'Your adversary selected {pc}.')
@@ -41,10 +50,7 @@ while True:
         print(f'The number sorted: {number}')
         print('-' * 30)
         break
-    option = input('Do you wish to continue [s/n] ?').lower()
-    print('\n')
-    if option=='N' or option=='n':
-        break
+
 
 print(f'Your scored: {pont_you}')
 print(f'Your adversary: {pont_pc}')
