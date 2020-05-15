@@ -3,7 +3,7 @@ import random
 print('-'*50)
 print('{:^50}'.format("GAME OF GUESS"))
 print('-'*50)
-print('Select 99 for exit game\n')
+print('{:^50}'.format('Select 99 for exit game\n'))
 
 #pontuação
 pont_you = 0
@@ -34,7 +34,6 @@ while game==True:
         if you==number and pc!=number:
             pont_you = pont_you + 1
             print("You're right")
-            print('-' * 30)
         elif pc == number and you!=number:
             pont_pc = pont_pc + 1
             print('Your adversary scored')
@@ -48,7 +47,8 @@ while game==True:
             print('nobody scored')
 
         print(f'The number sorted: {number}')
-        print('-' * 30)
+        print('-=' * 15)
+        print('')
         break
 
 
@@ -56,8 +56,8 @@ print(f'Your scored: {pont_you}')
 print(f'Your adversary: {pont_pc}')
 
 if pont_pc>pont_you:
-    print('Your LOSS!')
+    print('--- Your LOSS! ---')
 elif pont_you>pont_pc:
-    print('YOU WIN')
+    print('===  YOU WIN ===')
 else:
-    print('Game Tied')
+    print('-=- Game Tied -=-')
